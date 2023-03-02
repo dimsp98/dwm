@@ -2,7 +2,7 @@
 #include <X11/XF86keysym.h>
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const Gap default_gap        = {.isgap = 1, .realgap = 5, .gappx = 5 };
+static const Gap default_gap        = {.isgap = 1, .realgap = 10, .gappx = 10};
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -85,10 +85,6 @@ static const Key keys[] = {
     { 0|Mod1Mask,                   XK_space,  spawn,          SHCMD("~/.config/rofi/launchers/type-1/launcher.sh")}, 
    	{ MODKEY,                       XK_e,      spawn,          SHCMD("st -e ranger") },
     { 0,                            XK_Print,  spawn,          SHCMD("~/.config/rofi/applets/bin/screenshot.sh") },
-	{ 0|Mod1Mask,                   XK_Right,  viewnext,       {0} },
-	{ 0|Mod1Mask,                   XK_Left,   viewprev,       {0} },
-	{ MODKEY,                       XK_Tab,  tagtonext,      {0} },
-	{ MODKEY|ShiftMask,             XK_Tab,   tagtoprev,      {0} },
     { MODKEY,                       XK_b,      spawn,          SHCMD("firefox") },
     { MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Right,  focusstack,     {.i = +1 } },
