@@ -20,7 +20,7 @@ static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "togg
 static const char dmenufont[]       = "Iosevka Nerd Font:size=12:antialias=true";
 static const char col_gray1[]       = "#1E1E2E";
 static const char col_green[]       = "#a6e3a1";
-static const char col_gray3[]       = "#585b70";
+static const char col_gray3[]       = "#11111b";
 static const char col_gray4[]       = "#cdd6f4";
 static const char col_cyan[]        = "#74c7ec";
 static const char *colors[][3]      = {
@@ -78,12 +78,12 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-c", "-F", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
 	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mutevol } },
