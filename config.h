@@ -94,7 +94,7 @@ static const Key keys[] = {
 	{ 0|Mod1Mask,                   XK_Right,  viewnext,       {0} },
 	{ 0|Mod1Mask,                   XK_Left,   viewprev,       {0} },
 	{ MODKEY,                       XK_Tab,  tagtonext,      {0} },
-	{ MODKEY|ShiftMask,             XK_Tab,   tagtoprev,      {0} },
+	{ MODKEY|Mod1Mask,             XK_Tab,   tagtoprev,      {0} },
     { MODKEY,                       XK_b,      spawn,          SHCMD("firefox") },
     { MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },

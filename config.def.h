@@ -21,11 +21,11 @@ static const char dmenufont[]       = "Iosevka Nerd Font:size=12:antialias=true"
 static const char col_gray1[]       = "#1E1E2E";
 static const char col_green[]       = "#a6e3a1";
 static const char col_gray3[]       = "#11111b";
-static const char col_gray4[]       = "#cdd6f4";
+static const char col_white[]       = "#cdd6f4";
 static const char col_cyan[]        = "#74c7ec";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray4, col_gray1, col_gray3 },
+	[SchemeNorm] = { col_white, col_gray1, col_gray3 },
 	[SchemeSel]  = { col_cyan, col_gray1,  col_cyan  },
 };
 /* tagging */
@@ -94,7 +94,7 @@ static const Key keys[] = {
 	{ 0|Mod1Mask,                   XK_Right,  viewnext,       {0} },
 	{ 0|Mod1Mask,                   XK_Left,   viewprev,       {0} },
 	{ MODKEY,                       XK_Tab,  tagtonext,      {0} },
-	{ MODKEY|ShiftMask,             XK_Tab,   tagtoprev,      {0} },
+	{ MODKEY|Mod1Mask,             XK_Tab,   tagtoprev,      {0} },
     { MODKEY,                       XK_b,      spawn,          SHCMD("firefox") },
     { MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
