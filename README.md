@@ -1,3 +1,4 @@
+![Screenshot_2023-03-03-23-51-34_1920x1080](https://user-images.githubusercontent.com/125738354/222922868-241fd32c-1e1e-485d-8615-cb1c9a7a9620.png)
 dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
@@ -46,3 +47,6 @@ Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+#Screenshot
+![Screenshot_2023-03-03-23-51-34_1920x1080](https://user-images.githubusercontent.com/125738354/222922877-a0c8d466-0b93-4dc4-b87c-82af54c763b3.png)
