@@ -89,7 +89,7 @@ static const Key keys[] = {
 	{ 0,                            XF86XK_AudioMute, spawn,   {.v = mutevol } },
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
     { MODKEY,                       XK_space,  spawn,          SHCMD("~/.config/rofi/launchers/type-1/launcher.sh")}, 
-   	{ MODKEY,                       XK_e,      spawn,          SHCMD("st -e ranger") },
+   	{ MODKEY,                       XK_e,      spawn,          SHCMD("st -e lf-ueberzug") },
     { 0,                            XK_Print,  spawn,          SHCMD("~/.config/rofi/applets/bin/screenshot.sh") },
 	{ 0|Mod1Mask,                   XK_Right,  viewnext,       {0} },
 	{ 0|Mod1Mask,                   XK_Left,   viewprev,       {0} },
