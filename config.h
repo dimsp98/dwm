@@ -7,8 +7,8 @@ static const Gap default_gap        = {.isgap = 2, .realgap = 8, .gappx = 8 };
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 0;       /* vertical padding of bar */
-static const int sidepad            = 5;       /* horizontal padding of bar */
+static const int vertpad            = 5;       /* vertical padding of bar */
+static const int sidepad            = 10;       /* horizontal padding of bar */
 static const char *fonts[]          = { 
     "Iosevka Nerd Font:size=12:antialias=true:autohint=true", 
     "Iosevka Nerd Font:style=Medium:size=18",
@@ -21,11 +21,11 @@ static const char dmenufont[]       = "Iosevka Nerd Font:size=12:antialias=true"
 static const char col_gray1[]       = "#1E1E2E";
 static const char col_green[]       = "#a6e3a1";
 static const char col_gray3[]       = "#11111b";
-static const char col_gray4[]       = "#cdd6f4";
+static const char col_white[]       = "#cdd6f4";
 static const char col_cyan[]        = "#74c7ec";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray4, col_gray1, col_gray3 },
+	[SchemeNorm] = { col_white, col_gray1, col_gray3 },
 	[SchemeSel]  = { col_cyan, col_gray1,  col_cyan  },
 };
 /* tagging */
