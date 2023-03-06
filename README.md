@@ -1,7 +1,7 @@
 my dwm config
 ============================
 
-
+![Screenshot_2023-03-03-23-51-34_1920x1080](https://user-images.githubusercontent.com/125738354/223148206-550b9881-9cf2-49d0-9360-e3b996339eed.png)
 
 dwm - dynamic window manager
 ============================
@@ -51,3 +51,24 @@ Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+Patches
+-------------
+
+[ajacenttag](https://dwm.suckless.org/patches/adjacenttag/)
+
+[autostart](https://dwm.suckless.org/patches/autostart/)
+
+[bar-height](https://dwm.suckless.org/patches/bar_height/)
+
+[barpadding](https://dwm.suckless.org/patches/barpadding/)
+
+[fibonacci](https://dwm.suckless.org/patches/fibonacci/)
+
+[fullgaps](https://dwm.suckless.org/patches/fullgaps/)
+
+[fullscreen](https://dwm.suckless.org/patches/fullscreen/)
+
+[movestack](https://dwm.suckless.org/patches/movestack/)
+
+[underlinetags](https://dwm.suckless.org/patches/underlinetags/)
