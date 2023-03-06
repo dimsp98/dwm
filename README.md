@@ -1,7 +1,7 @@
 my dwm config
 ============================
+![1678123061](https://user-images.githubusercontent.com/125738354/223184393-759e2fad-0c68-4154-aa2f-325f522a3cd8.png)
 
-![Screenshot_2023-03-03-23-51-34_1920x1080](https://user-images.githubusercontent.com/125738354/223148206-550b9881-9cf2-49d0-9360-e3b996339eed.png)
 
 dwm - dynamic window manager
 ============================
@@ -62,6 +62,10 @@ Patches
 [bar-height](https://dwm.suckless.org/patches/bar_height/)
 
 [barpadding](https://dwm.suckless.org/patches/barpadding/)
+
+[bottomstack](https://dwm.suckless.org/patches/bottomstack/)
+
+[centeredmaster](https://dwm.suckless.org/patches/centeredmaster/)
 
 [fibonacci](https://dwm.suckless.org/patches/fibonacci/)
 
