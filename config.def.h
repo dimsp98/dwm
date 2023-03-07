@@ -103,26 +103,10 @@ static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_d, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
-    {0, XF86XK_AudioLowerVolume, spawn, {.v = downvol}},
-    {0, XF86XK_AudioMute, spawn, {.v = mutevol}},
-    {0, XF86XK_AudioRaiseVolume, spawn, {.v = upvol}},
-    {MODKEY, XK_e, spawn, SHCMD("st -e lf-ueberzug")},
-    {MODKEY, XK_space, spawn,
-     SHCMD("~/.config/rofi/launchers/type-1/launcher.sh")},
-    {0, XK_Print, spawn,
-     SHCMD(" maim ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H-%M-%S).png && "
-           "notify-send 'Screenshot saved'")},
-    {MODKEY, XK_Print, spawn,
-     SHCMD(" maim -s ~/Pictures/Screenshots/$(date +%Y-%m-%d-%H-%M-%S).png && "
-           "notify-send 'Screenshot saved'")},
-    {MODKEY | ShiftMask, XK_Print, spawn,
-     SHCMD(" maim --delay 3 ~/Pictures/Screenshots/$(date "
-           "+%Y-%m-%d-%H-%M-%S).png && notify-send 'Screenshot saved'")},
     {0 | Mod1Mask, XK_Right, viewnext, {0}},
     {0 | Mod1Mask, XK_Left, viewprev, {0}},
     {MODKEY, XK_Tab, tagtonext, {0}},
     {MODKEY | Mod1Mask, XK_Tab, tagtoprev, {0}},
-    {MODKEY, XK_b, spawn, SHCMD("firefox")},
     {MODKEY | ShiftMask, XK_b, togglebar, {0}},
     {MODKEY | ShiftMask, XK_f, fullscreen, {0}},
     {MODKEY, XK_Right, focusstack, {.i = +1}},

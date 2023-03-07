@@ -6,6 +6,9 @@ xrandr --output HDMI-1 --mode 1920x1080 --rate 60 &
 xset s off &
 xset -dpms &
 
+#keybindings 
+pgrep -x sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
+
 #compositor
 pgrep -x picom > /dev/null || picom --config ~/.config/picom/picom.conf &
 
