@@ -27,7 +27,7 @@ static const char *colors[][3] = {
 };
 /* tagging */
 static const char *tags[] = {"", "", "", "", "",
-                             "", "", "", ""};
+                             "", "", "", "", ""};
 
 static const unsigned int ulinepad =
     5; /* horizontal padding between the underline and tag */
@@ -122,7 +122,7 @@ static const Key keys[] = {
     {MODKEY, XK_o, setlayout, {.v = &layouts[6]}},
     {MODKEY | ShiftMask, XK_u, setlayout, {.v = &layouts[7]}},
     {MODKEY | ShiftMask, XK_o, setlayout, {.v = &layouts[8]}},
-    {0 | Mod1Mask, XK_space, setlayout, {0}},
+    {0 | Mod1Mask, XK_l, setlayout, {0}},
     {MODKEY | ShiftMask, XK_space, togglefloating, {0}},
     {MODKEY, XK_0, view, {.ui = ~0}},
     {MODKEY | ShiftMask, XK_0, tag, {.ui = ~0}},
@@ -136,7 +136,8 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_equal, setgaps, {.i = GAP_TOGGLE}},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4) TAGKEYS(XK_6, 5) TAGKEYS(XK_7, 6) TAGKEYS(XK_8, 7)
-            TAGKEYS(XK_9, 8){MODKEY | ShiftMask, XK_e, quit, {0}},
+            TAGKEYS(XK_9, 8)
+                TAGKEYS(XK_0, 9){MODKEY | ShiftMask, XK_e, quit, {0}},
 };
 
 /* button definitions */
