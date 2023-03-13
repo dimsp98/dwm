@@ -16,7 +16,6 @@ static const char *fonts[] = {
     "feather:size=13:antialias=true:autohint=true"};
 static const char dmenufont[] = "Iosevka Nerd Font:size=12:antialias=true";
 static const char col_gray1[] = "#1E1E2E";
-static const char col_green[] = "#a6e3a1";
 static const char col_gray3[] = "#11111b";
 static const char col_white[] = "#cdd6f4";
 static const char col_cyan[] = "#74c7ec";
