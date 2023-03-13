@@ -1,24 +1,58 @@
 --- dwm.c
 +++ dwm.c
-@@ -697,7 +697,6 @@ void
- drawbar(Monitor *m)
+@@ -205,6 +205,8 @@ static void setup(void);
+ static void seturgent(Client *c, int urg);
+ static void showhide(Client *c);
+ static void sigchld(int unused);
++static void sighup(int unused);
++static void sigterm(int unused);
+ static void spawn(const Arg *arg);
+ static void tag(const Arg *arg);
+ static void tagmon(const Arg *arg);
+@@ -1249,6 +1252,7 @@ propertynotify(XEvent *e)
+ void
+ quit(const Arg *arg)
  {
- 	int x, w, tw = 0;
--	int tlpad;
- 	int boxs = drw->fonts->h / 9;
- 	int boxw = drw->fonts->h / 6 + 2;
- 	unsigned int i, occ = 0, urg = 0;
-@@ -733,11 +732,9 @@ drawbar(Monitor *m)
- 	if ((w = m->ww - tw - x) > bh) {
- 		if (m->sel) {
- 			drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
--			tlpad = MAX((m->ww - ((int)TEXTW(m->sel->name) - lrpad)) / 2 - x, lrpad / 2);
--			drw_text(drw, x, 0, w, bh, tlpad, m->sel->name, 0);
-+			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
- 			if (m->sel->isfloating)
--				drw_rect(drw, x + boxs + tlpad - lrpad / 2, boxs,
--					boxw, boxw, m->sel->isfixed, 0);
-+				drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
- 		} else {
- 			drw_setscheme(drw, scheme[SchemeNorm]);
- 			drw_rect(drw, x, 0, w, bh, 1, 1);
++	if(arg->i) restart = 1;
+ 	running = 0;
+ }
+ 
+@@ -1537,6 +1541,9 @@ setup(void)
+ 	/* clean up any zombies immediately */
+ 	sigchld(0);
+ 
++	signal(SIGHUP, sighup);
++	signal(SIGTERM, sigterm);
++
+ 	/* init screen */
+ 	screen = DefaultScreen(dpy);
+ 	sw = DisplayWidth(dpy, screen);
+@@ -1638,6 +1645,20 @@ sigchld(int unused)
+ }
+ 
+ void
++sighup(int unused)
++{
++	Arg a = {.i = 1};
++	quit(&a);
++}
++
++void
++sigterm(int unused)
++{
++	Arg a = {.i = 0};
++	quit(&a);
++}
++
++void
+ spawn(const Arg *arg)
+ {
+ 	if (arg->v == dmenucmd)
+@@ -2140,6 +2161,7 @@ main(int argc, char *argv[])
+ 	setup();
+ 	scan();
+ 	run();
++	if(restart) execvp(argv[0], argv);
+ 	cleanup();
+ 	XCloseDisplay(dpy);
+ 	return EXIT_SUCCESS;

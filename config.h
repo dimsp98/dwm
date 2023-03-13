@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include "exitdwm.c"
 #include "movestack.c"
 /* appearance */
 static const unsigned int borderpx = 1; /* border pixel of windows */
@@ -12,8 +13,10 @@ static const int vertpad = 5;  /* vertical padding of bar */
 static const int sidepad = 10; /* horizontal padding of bar */
 static const char *fonts[] = {
     "Iosevka Nerd Font:size=12:antialias=true:autohint=true",
-    "Iosevka Nerd Font:style=Medium:size=18",
-    "feather:size=13:antialias=true:autohint=true"};
+    "Iosevka Nerd Font:style=Medium:size=18:antialias=true:autohint=true",
+    "Hack Nerd Font:size=12:antialias=true:autohint=true",
+    "feather:size=13:antialias=true:autohint=true",
+};
 static const char dmenufont[] = "Iosevka Nerd Font:size=12:antialias=true";
 static const char col_gray1[] = "#1E1E2E";
 static const char col_gray3[] = "#11111b";
@@ -134,10 +137,11 @@ static const Key keys[] = {
     {MODKEY, XK_equal, setgaps, {.i = +5}},
     {MODKEY | ShiftMask, XK_minus, setgaps, {.i = GAP_RESET}},
     {MODKEY | ShiftMask, XK_equal, setgaps, {.i = GAP_TOGGLE}},
+    {MODKEY | ControlMask | ShiftMask, XK_q, quit, {1}},
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4) TAGKEYS(XK_6, 5) TAGKEYS(XK_7, 6) TAGKEYS(XK_8, 7)
             TAGKEYS(XK_9, 8)
-                TAGKEYS(XK_0, 9){MODKEY | ShiftMask, XK_e, quit, {0}},
+                TAGKEYS(XK_0, 9){MODKEY | ShiftMask, XK_e, exitdwm, {0}},
 };
 
 /* button definitions */
