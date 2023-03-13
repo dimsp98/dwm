@@ -67,7 +67,7 @@
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel };                  /* color schemes */
+enum { SchemeNorm, SchemeSel, SchemeTitle };     /* color schemes */
 enum {
     NetSupported,
     NetWMName,
@@ -115,7 +115,7 @@ typedef struct {
 typedef struct Monitor Monitor;
 typedef struct Client Client;
 struct Client {
-    char name[256];
+    char name[128];
     float mina, maxa;
     int x, y, w, h;
     int oldx, oldy, oldw, oldh;
@@ -849,6 +849,7 @@ int drawstatusbar(Monitor *m, int bh, char *stext) {
 
 void drawbar(Monitor *m) {
     int x, w, tw = 0;
+    int tlpad;
     int boxs = drw->fonts->h / 9;
     int boxw = drw->fonts->h / 6 + 2;
     unsigned int i, occ = 0, urg = 0;
@@ -872,7 +873,7 @@ void drawbar(Monitor *m) {
         w = TEXTW(tags[i]);
         drw_setscheme(
             drw,
-            scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
+            scheme[m->tagset[m->seltags] & 1 << i ? SchemeTitle : SchemeSel]);
         drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
         if (ulineall || m->tagset[m->seltags] &
                             1 << i) /* if there are conflicts, just move these
@@ -887,15 +888,19 @@ void drawbar(Monitor *m) {
         x += w;
     }
     w = TEXTW(m->ltsymbol);
+    drw_setscheme(drw, scheme[m == selmon ? SchemeTitle : SchemeNorm]);
     drw_setscheme(drw, scheme[SchemeNorm]);
     x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
     if ((w = m->ww - tw - x) > bh) {
         if (m->sel) {
             drw_setscheme(drw, scheme[m == selmon ? SchemeSel : SchemeNorm]);
-            drw_text(drw, x, 0, w - 2 * sp, bh, lrpad / 2, m->sel->name, 0);
+            tlpad = MAX((m->ww - ((int)TEXTW(m->sel->name) - lrpad)) / 2 - x,
+                        lrpad / 2);
+            drw_text(drw, x, 0, w, bh, tlpad, m->sel->name, 0);
             if (m->sel->isfloating)
-                drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
+                drw_rect(drw, x + boxs + tlpad - lrpad / 2, boxs, boxw, boxw,
+                         m->sel->isfixed, 0);
         } else {
             drw_setscheme(drw, scheme[SchemeNorm]);
             drw_rect(drw, x, 0, w - 2 * sp, bh, 1, 1);
