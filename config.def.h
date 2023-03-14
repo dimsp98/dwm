@@ -12,9 +12,8 @@ static const int user_bh = 25; /* 0 means that dwm will calculate bar height, >=
 static const int vertpad = 5;  /* vertical padding of bar */
 static const int sidepad = 10; /* horizontal padding of bar */
 static const char *fonts[] = {
-    "Iosevka Nerd Font:size=12:antialias=true:autohint=true",
-    "Iosevka Nerd Font:style=Medium:size=18:antialias=true:autohint=true",
-    "Hack Nerd Font:size=12:antialias=true:autohint=true",
+    "Iosevka Nerd Font:size=13:antialias=true:autohint=true",
+    "Iosevka Nerd Font:style=Medium:size=13:antialias=true:autohint=true",
     "feather:size=13:antialias=true:autohint=true",
 };
 static const char dmenufont[] = "Iosevka Nerd Font:size=12:antialias=true";
