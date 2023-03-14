@@ -51,7 +51,7 @@ static const Rule rules[] = {
     {"Firefox", NULL, NULL, 1 << 1, 0, -1},
     {"Zathura", NULL, NULL, 1 << 3, 0, -1},
     {"Soffice", NULL, NULL, 1 << 4, 0, -1},
-    {"Zoom Meeting", NULL, NULL, 1 << 2, 0, -1},
+    {"zoom", NULL, NULL, 1, 0, -1},
     {"mpv", NULL, NULL, 1 << 8, 0, -1}};
 
 /* layout(s) */
