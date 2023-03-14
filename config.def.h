@@ -99,8 +99,8 @@ static const Key keys[] = {
     /* modifier                     key        function        argument */
     {MODKEY, XK_d, spawn, {.v = dmenucmd}},
     {MODKEY, XK_Return, spawn, {.v = termcmd}},
-    {0 | Mod1Mask, XK_bracketright, viewnext, {0}},
-    {0 | Mod1Mask, XK_bracketleft, viewprev, {0}},
+    {MODKEY, XK_bracketright, viewnext, {0}},
+    {MODKEY, XK_bracketleft, viewprev, {0}},
     {MODKEY, XK_Tab, tagtonext, {0}},
     {MODKEY | Mod1Mask, XK_Tab, tagtoprev, {0}},
     {MODKEY | ShiftMask, XK_b, togglebar, {0}},
