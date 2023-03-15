@@ -24,5 +24,5 @@ setxkbmap -model pc104 -layout us,gr -option 'grp:alt_shift_toggle' &
 #notifications
 pgrep -x dunst > /dev/null || dunst -c ~/.config/dunst/dunstrc &
 
-exec /usr/local/bin/slstatus &
+exec slstatus &
 exec /usr/local/bin/dwm 
