@@ -52,9 +52,9 @@ void exitdwm() {
     else if (strcmp(exit_action, S_EXIT) == 0)
         quit(&(const Arg){0});
     else if (strcmp(exit_action, S_REBOOT) == 0)
-        system("loginctl reboot");
+        system("systemctl reboot");
     else if (strcmp(exit_action, S_SHUTDOWN) == 0)
-        system("loginctl poweroff -i");
+        system("systemctl poweroff -i");
 
 close_streams:
     pclose(exit_menu);
