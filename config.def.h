@@ -2,7 +2,7 @@
 #include "exitdwm.c"
 #include "movestack.c"
 /* appearance */
-static const unsigned int borderpx = 1; /* border pixel of windows */
+static const unsigned int borderpx = 5; /* border pixel of windows */
 static const Gap default_gap = {.isgap = 2, .realgap = 8, .gappx = 8};
 static const unsigned int snap = 32; /* snap pixel */
 static const int showbar = 1;        /* 0 means no bar */
