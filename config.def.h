@@ -2,7 +2,7 @@
 #include "exitdwm.c"
 #include "movestack.c"
 /* appearance */
-static const unsigned int borderpx = 5; /* border pixel of windows */
+static const unsigned int borderpx = 1; /* border pixel of windows */
 static const Gap default_gap = {.isgap = 2, .realgap = 8, .gappx = 8};
 static const unsigned int snap = 32; /* snap pixel */
 static const int showbar = 1;        /* 0 means no bar */
@@ -50,7 +50,7 @@ static const Rule rules[] = {
     {"Firefox", NULL, NULL, 1 << 1, 0, -1},
     {"Brave-browser", NULL, NULL, 1 << 1, 0, -1},
     {"Zathura", NULL, NULL, 1 << 3, 0, -1},
-    {"Nemo", NULL, NULL, 1 << 2, 0, -1},
+    {"Thunar", NULL, NULL, 1 << 2, 0, -1},
     {"Soffice", NULL, NULL, 1 << 4, 0, -1},
     {"zoom", NULL, NULL, 1, 0, -1},
     {"mpv", NULL, NULL, 1 << 8, 0, -1}};
