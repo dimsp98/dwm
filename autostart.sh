@@ -7,7 +7,7 @@ xset s off &
 xset -dpms &
 
 #audio
-dbus-run-session pipewire &
+pipewire &
 
 #keybindings 
 pgrep -x sxhkd > /dev/null || sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
