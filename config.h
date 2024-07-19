@@ -28,7 +28,7 @@ static const char *colors[][3] = {
     [SchemeTitle] = {col_cyan, col_gray1, col_white},
 };
 /* tagging */
-static const char *tags[] = {"", "", "", "", "",
+static const char *tags[] = {"", "", "", "", "",
                              "", "", "", "", ""};
 
 static const unsigned int ulinepad =
